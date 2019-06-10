@@ -1,4 +1,4 @@
-# lftp-file-mirror
+# lftp--mirror--files--alone | Create  directories  the  same  as  file names and get the files into them instead of current                        directory.
 
 `lftp -f script_file`
 
