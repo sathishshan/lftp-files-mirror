@@ -51,8 +51,6 @@ set ftp:ssl-allow no
 open $HOST
 user $FTPNAME \"$FTPPASS\"" > "${locpath}/lftp_runner.txt"
 
-#/opt/cww/${Domain}/cwwout/lftp_runner.txt
-
 cat "$REMOTE_FILE" 2> /dev/null | while read line
 do
 echo "mget -d ${line}" >> "${locpath}/lftp_runner.txt"
