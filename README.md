@@ -1,5 +1,10 @@
-# lftp--mirror--files--alone | Create  directories  the  same  as  file names and get the files into them instead of current                        directory.
+### lftp--mirror--files--alone | Create  directories  the  same  as  file names and get the files into them instead of current                        directory.
 
+#### "Script USAGE: 
+For MAN page use -m [help command]"  
+lftp_files_alone.sh -u Username -p 'Password' -h Host -d Domain.com -f path_to_remotefile.txt"
+
+#### Script USAGE:
 `lftp -f script_file`
 
 ```
