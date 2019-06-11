@@ -6,7 +6,9 @@ function usage {
 	echo "USAGE: For MAN page use -m [help command]"
 	echo "$0 -u Username -p 'Password' -h Host -d Domain.com -f path_to_remotefile.txt"
 }
-
+if (( $OPTIND == 1 )); then
+   usage
+fi
 while getopts "u:p:h:d:f:m" opt; do
 	case "$opt" in
 		u )
