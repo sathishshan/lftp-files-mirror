@@ -23,7 +23,7 @@ while getopts ":u:p:h:d:f:m" opt; do
 		f)
 			REMOTE_FILE=$OPTARG
 			;;
-		m)
+		m | *)
 		 	usage
 		 	exit
 		 	;;
@@ -45,7 +45,6 @@ else
 mkdir -p "${locpath}"
 
 #Passing Arguments
-
 
 # Creating lftp_runner
 echo "
