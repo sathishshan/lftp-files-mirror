@@ -48,6 +48,8 @@ echo "
 set net:timeout 10
 set ssl:verify-certificate false
 set ftp:ssl-allow no
+set ftp:passive-mode true
+set ftp:list-options -a
 
 open $HOST
 user $FTPNAME \"$FTPPASS\"" > "${locpath}/lftp_runner.txt"
