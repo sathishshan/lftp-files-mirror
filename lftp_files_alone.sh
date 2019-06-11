@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 #usage
 function usage {
@@ -31,8 +31,8 @@ while getopts "u:p:h:d:f:m" opt; do
 	esac
 done
 
-locpath="~/Downloads/${DOMAIN}/out"
-dom="~/Downloads/${DOMAIN}"
+locpath="/home/sathish/Downloads/${DOMAIN}/out"
+dom="/home/sathish/Downloads/${DOMAIN}"
 
 if [ -d "${dom}" ]; then
 	echo "The Domain name already exist!"
@@ -42,6 +42,7 @@ mkdir -p "${dom}" && mkdir -p "${locpath}"
 
 #Passing Arguments
 
+
 # Creating lftp_runner
 echo "
 set net:timeout 10
@@ -50,6 +51,8 @@ set ftp:ssl-allow no
 
 open $HOST
 user $FTPNAME \"$FTPPASS\"" > "${locpath}/lftp_runner.txt"
+
+#/opt/cww/${Domain}/cwwout/lftp_runner.txt
 
 cat "$REMOTE_FILE" 2> /dev/null | while read line
 do
