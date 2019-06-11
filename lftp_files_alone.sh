@@ -2,19 +2,16 @@
 
 #usage
 function usage {
-	echo
 	echo "USAGE: For MAN page use -m [help command]"
 	echo "$0 -u Username -p 'Password' -h Host -d Domain.com -f path_to_remotefile.txt"
 }
-if (( $OPTIND == 1 )); then
-   usage
-fi
-while getopts "u:p:h:d:f:m" opt; do
+
+while getopts ":u:p:h:d:f:m" opt; do
 	case "$opt" in
-		u )
+		u)
 			FTPNAME=$OPTARG
 			;;
-		p )
+		p)
 			FTPPASS=$OPTARG
 			;;
 		h) 
@@ -26,10 +23,15 @@ while getopts "u:p:h:d:f:m" opt; do
 		f)
 			REMOTE_FILE=$OPTARG
 			;;
-		m | *)
-		 usage
-		 exit
-		 ;;
+		m)
+		 	usage
+		 	exit
+		 	;;
+		?)
+                        echo "I don't know what $OPTARG is !!!"
+                        usage
+                        exit 1
+			;;
 	esac
 done
 
@@ -55,8 +57,6 @@ set ftp:list-options -a
 
 open $HOST
 user $FTPNAME \"$FTPPASS\"" > "${locpath}/lftp_runner.txt"
-
-
 
 cat "$REMOTE_FILE" 2> /dev/null | while read line
 do
