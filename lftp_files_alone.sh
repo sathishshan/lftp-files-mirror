@@ -38,7 +38,7 @@ if [ -d "${dom}" ]; then
 	echo "The Domain name already exist!"
 	exit 1
 else
-mkdir -p "${dom}" && mkdir -p "${locpath}"
+mkdir -p "${locpath}"
 
 #Passing Arguments
 
