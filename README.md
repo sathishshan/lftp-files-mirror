@@ -1,4 +1,4 @@
-### lftp--mirror--files--alone | Create  directories  the  same  as  in the remote server and get the files into them instead of mirroring all files in current directory.
+### lftp--mirror--files--alone | Create  directorie in local the  same  as  in the remote server and get the files into them instead of mirroring all files in current directory.
 
 #### Script USAGE: 
 "For MAN page use -m [help command]"  
